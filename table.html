@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>A-frame trials</title>
+    <script src="script/aframe.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+            <img src="wood.jpg" id="pic">
+            <img src="./images/sky.jpg" id="sky">
+            <img src="./images/w.jpg" id="w">
+            <img src="./images/download.png" id="milo">
+            <img src="./images/w2.jpg" id="ground">
+            <img src="./images/top.jpg" id="top">
+            <img src="./images/ice.jpg" id="g2">
+            <img src="./images/ideal.jpeg" id="milk">
+
+        </a-assets>
+        <!--    Building Structure    -->
+
+        <!--
+        <a-cylinder radius="25" side="double" open-ended="t" height="8" src="#top" position="0 1 0">
+            <a-cylinder radius="24.8" side="double" open-ended="t" height="8" src="images/gn.jpg" position="0 0 0">
+            </a-cylinder>
+        </a-cylinder>
+-->
+
+        <!--    roof/summer hut -->
+        <a-cone radius-bottom="25.5" radius-top="0" height="12" src="images/sand.jpeg" open-ended="true" position="0 13.1 0" side="double">
+            <a-cone radius-bottom="25.2" radius-top="0" height="12" src="images/night.gif" open-ended="true" position="0 0 0" side="double">
+
+                <!--         Stand        -->
+                <a-entity id="stand">
+                    <a-cylinder height="30" position="0 -9.9 0" radius="0.5" src="metal.jpg"> </a-cylinder>
+                    <a-cylinder height="1" radius="1" position="0 -5" src="images/wood.jpg"> </a-cylinder>
+                    <a-cylinder height="46" radius="0.2" position="0 -5 0" rotation="0 0 90" src="metal.jpg"> </a-cylinder>
+                    <a-cylinder height="46" radius="0.2" position="0 -5 0" rotation="0 90 90" src="metal.jpg"> </a-cylinder>
+                    <a-cylinder height="46" radius="0.2" position="0 -5 0" rotation="0 60 90" src="metal.jpg"> </a-cylinder>
+                    <a-cylinder height="46" radius="0.2" position="0 -5 0" rotation="0 30 90" src="metal.jpg"> </a-cylinder>
+                    <a-cylinder height="46" radius="0.2" position="0 -5 0" rotation="0 120 90" src="metal.jpg"> </a-cylinder>
+                    <a-cylinder height="46" radius="0.2" position="0 -5 0" rotation="0 120  90" src="metal.jpg"> </a-cylinder>
+                    <a-cylinder height="46" radius="0.2" position="0 -5 0" rotation="0 0 90" src="metal.jpg"> </a-cylinder>
+                    <a-cylinder height="46" radius="0.2" position="0 -5 0" rotation="0 0 90" src="metal.jpg"> </a-cylinder>
+                </a-entity>
+
+            </a-cone>
+        </a-cone>
+
+        <!--        Table and chairs   -->
+
+        <a-entity id="set 1">
+            <!--    Table and table setting    -->
+            <a-entity position="0 1 0">
+                <a-cylinder height="0.1" radius="4.5" position="0 0 0" src="#pic">
+                    <!--      Milo      -->
+                    <a-cylinder radius="0.3" height="0.8" src="#milo" texture="lines" position="0 0.5 -0.9">
+                        <a-cylinder position="0 0.41 0" radius="0.3" src="metal.jpg" height="0.03" open-ended="t" side="double">
+                            <a-circle position="0 0 0" radius="0.3" src="#top" rotation="-90 0 0"></a-circle>
+                        </a-cylinder>
+                        <a-cylinder position="0 -0.41 0" radius="0.3" src="metal.jpg" height="0.03" open-ended="t" side="double">
+                        </a-cylinder>
+                    </a-cylinder>
+
+                    <!--   cups   -->
+                    <!--      ideal cup              -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="-1.5 0.2 0" open-ended="t" side="double" src="images/ideal2.jpg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+
+                    <!--        Dark cup            -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="1.5 0.2 0" open-ended="t" side="double" src="images/dark.jpeg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+                    <!--         Ice cup           -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="0 0.2 -2.5" open-ended="t" side="double" src="images/ice.jpg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+                    <!--      Image cup           -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="0 0.2 2.5" open-ended="t" side="double" src="images/me.jpg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+
+                    <!--      Milk       -->
+                    <a-cylinder radius="0.15" height="0.3" position="0 0.22 1" src="#milk">
+                        <a-cylinder position="0 0.159 0" radius="0.15" height="0.03" src="metal.jpg" open-ended="t" side="double">
+                            <a-circle position="0 0 0" radius="0.15" src="#top" rotation="-90 0 0"></a-circle>
+                        </a-cylinder>
+                        <a-cylinder position="0 -0.159 0" radius="0.15" height="0.03" src="metal.jpg" open-ended="t" side="double">
+                        </a-cylinder>
+                    </a-cylinder>
+                </a-cylinder>
+            </a-entity>
+            <a-box height="5" width="0.2" depth="0.2" position="2 -1.5 0.5" src=metal.jpg>
+            </a-box>
+            <a-box height="5" width="0.2" depth="0.2" position="-1 -1.5 2.5" src=metal.jpg>
+            </a-box>
+            <a-box height="5" width="0.2" position="-1 -1.5 -2.5" s depth="0.2" src=metal.jpg>
+            </a-box>
+
+            <!--    Chairs    -->
+            <a-entity position="0 0 4.5">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 -0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+
+            <a-entity position="0 0 -4.5" rotation="0 180 0">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 -0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+
+            <a-entity position="4.5 0 0" rotation="0 90 0">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+
+            <a-entity position="-4.5 0 0" rotation="0 -90 0">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 -0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+        </a-entity>
+
+        <a-entity id="set 2" position="0 -0.33 15.5">
+            <!--    Table and table setting    -->
+            <a-entity position="0 1 0">
+                <a-cylinder height="0.1" radius="4.5" position="0 0 0" src="#pic">
+                    <!--      Milo      -->
+                    <a-cylinder radius="0.3" height="0.8" src="#milo" texture="lines" position="0 0.5 0">
+                        <a-cylinder position="0 0.41 0" radius="0.3" src="metal.jpg" height="0.03" open-ended="t" side="double">
+                            <a-circle position="0 0 0" radius="0.3" src="#top" rotation="-90 0 0"></a-circle>
+                        </a-cylinder>
+                        <a-cylinder position="0 -0.41 0" radius="0.3" src="metal.jpg" height="0.03" open-ended="t" side="double">
+                        </a-cylinder>
+                    </a-cylinder>
+
+                    <!--   cups   -->
+                    <!--      ideal cup              -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="-1.5 0.2 0" open-ended="t" side="double" src="images/ideal2.jpg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+
+                    <!--        Dark cup            -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="1.5 0.2 0" open-ended="t" side="double" src="images/dark.jpeg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+                    <!--         Ice cup           -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="0 0.2 -1.5" open-ended="t" side="double" src="images/ice.jpg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+                    <!--      Image cup           -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="0 0.2 1.5" open-ended="t" side="double" src="images/me.jpg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+
+
+                    <!--      Milk       -->
+                    <a-cylinder radius="0.15" height="0.3" position="0 0.22 0.5" src="#milk">
+                        <a-cylinder position="0 0.159 0" radius="0.15" height="0.03" src="metal.jpg" open-ended="t" side="double">
+                            <a-circle position="0 0 0" radius="0.15" src="#top" rotation="-90 0 0"></a-circle>
+                        </a-cylinder>
+                        <a-cylinder position="0 -0.159 0" radius="0.15" height="0.03" src="metal.jpg" open-ended="t" side="double">
+                        </a-cylinder>
+                    </a-cylinder>
+                </a-cylinder>
+            </a-entity>
+            <a-box height="5" width="0.2" depth="0.2" position="2 -1.5 0.5" src=metal.jpg>
+            </a-box>
+            <a-box height="5" width="0.2" depth="0.2" position="-1 -1.5 2.5" src=metal.jpg>
+            </a-box>
+            <a-box height="5" width="0.2" position="-1 -1.5 -2.5" s depth="0.2" src=metal.jpg>
+            </a-box>
+
+            <!--    Chairs    -->
+            <a-entity position="0 0 4.5">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 -0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+
+            <a-entity position="0 0 -4.5" rotation="0 180 0">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 -0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+
+            <a-entity position="4.5 0 0" rotation="0 90 0">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+
+            <a-entity position="-4.5 0 0" rotation="0 -90 0">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 -0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+        </a-entity>
+
+        <a-entity id="set 3" position="0 -0.33 -15.5">
+            <!--    Table and table setting    -->
+            <a-entity position="0 1 0">
+                <a-cylinder height="0.1" radius="4.5" position="0 0 0" src="#pic">
+                    <!--      Milo      -->
+                    <a-cylinder radius="0.3" height="0.8" src="#milo" texture="lines" position="0 0.5 0">
+                        <a-cylinder position="0 0.41 0" radius="0.3" src="metal.jpg" height="0.03" open-ended="t" side="double">
+                            <a-circle position="0 0 0" radius="0.3" src="#top" rotation="-90 0 0"></a-circle>
+                        </a-cylinder>
+                        <a-cylinder position="0 -0.41 0" radius="0.3" src="metal.jpg" height="0.03" open-ended="t" side="double">
+                        </a-cylinder>
+                    </a-cylinder>
+
+                    <!--   cups   -->
+                    <!--      ideal cup              -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="-1.5 0.2 0" open-ended="t" side="double" src="images/ideal2.jpg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+
+                    <!--        Dark cup            -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="1.5 0.2 0" open-ended="t" side="double" src="images/dark.jpeg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+                    <!--         Ice cup           -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="0 0.2 -1.5" open-ended="t" side="double" src="images/ice.jpg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+                    <!--      Image cup           -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="0 0.2 1.5" open-ended="t" side="double" src="images/me.jpg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+
+
+                    <!--      Milk       -->
+                    <a-cylinder radius="0.15" height="0.3" position="0 0.22 0.5" src="#milk">
+                        <a-cylinder position="0 0.159 0" radius="0.15" height="0.03" src="metal.jpg" open-ended="t" side="double">
+                            <a-circle position="0 0 0" radius="0.15" src="#top" rotation="-90 0 0"></a-circle>
+                        </a-cylinder>
+                        <a-cylinder position="0 -0.159 0" radius="0.15" height="0.03" src="metal.jpg" open-ended="t" side="double">
+                        </a-cylinder>
+                    </a-cylinder>
+                </a-cylinder>
+            </a-entity>
+            <a-box height="5" width="0.2" depth="0.2" position="2 -1.5 0.5" src=metal.jpg>
+            </a-box>
+            <a-box height="5" width="0.2" depth="0.2" position="-1 -1.5 2.5" src=metal.jpg>
+            </a-box>
+            <a-box height="5" width="0.2" position="-1 -1.5 -2.5" s depth="0.2" src=metal.jpg>
+            </a-box>
+
+            <!--    Chairs    -->
+            <a-entity position="0 0 4.5">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 -0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+
+            <a-entity position="0 0 -4.5" rotation="0 180 0">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 -0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+
+            <a-entity position="4.5 0 0" rotation="0 90 0">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+
+            <a-entity position="-4.5 0 0" rotation="0 -90 0">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 -0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+        </a-entity>
+
+        <a-entity id="set 4" position="15.5 -0.33 0">
+            <!--    Table and table setting    -->
+            <a-entity position="0 1 0">
+                <a-cylinder height="0.1" radius="4.5" position="0 0 0" src="#pic">
+                    <!--      Milo      -->
+                    <a-cylinder radius="0.3" height="0.8" src="#milo" texture="lines" position="0 0.5 0">
+                        <a-cylinder position="0 0.41 0" radius="0.3" src="metal.jpg" height="0.03" open-ended="t" side="double">
+                            <a-circle position="0 0 0" radius="0.3" src="#top" rotation="-90 0 0"></a-circle>
+                        </a-cylinder>
+                        <a-cylinder position="0 -0.41 0" radius="0.3" src="metal.jpg" height="0.03" open-ended="t" side="double">
+                        </a-cylinder>
+                    </a-cylinder>
+
+                    <!--   cups   -->
+                    <!--      ideal cup              -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="-1.5 0.2 0" open-ended="t" side="double" src="images/ideal2.jpg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+
+                    <!--        Dark cup            -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="1.5 0.2 0" open-ended="t" side="double" src="images/dark.jpeg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+                    <!--         Ice cup           -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="0 0.2 -1.5" open-ended="t" side="double" src="images/ice.jpg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+                    <!--      Image cup           -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="0 0.2 1.5" open-ended="t" side="double" src="images/me.jpg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+
+
+                    <!--      Milk       -->
+                    <a-cylinder radius="0.15" height="0.3" position="0 0.22 0.5" src="#milk">
+                        <a-cylinder position="0 0.159 0" radius="0.15" height="0.03" src="metal.jpg" open-ended="t" side="double">
+                            <a-circle position="0 0 0" radius="0.15" src="#top" rotation="-90 0 0"></a-circle>
+                        </a-cylinder>
+                        <a-cylinder position="0 -0.159 0" radius="0.15" height="0.03" src="metal.jpg" open-ended="t" side="double">
+                        </a-cylinder>
+                    </a-cylinder>
+                </a-cylinder>
+            </a-entity>
+            <a-box height="5" width="0.2" depth="0.2" position="2 -1.5 0.5" src=metal.jpg>
+            </a-box>
+            <a-box height="5" width="0.2" depth="0.2" position="-1 -1.5 2.5" src=metal.jpg>
+            </a-box>
+            <a-box height="5" width="0.2" position="-1 -1.5 -2.5" s depth="0.2" src=metal.jpg>
+            </a-box>
+
+            <!--    Chairs    -->
+            <a-entity position="0 0 4.5">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 -0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+
+            <a-entity position="0 0 -4.5" rotation="0 180 0">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 -0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+
+            <a-entity position="4.5 0 0" rotation="0 90 0">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+
+            <a-entity position="-4.5 0 0" rotation="0 -90 0">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 -0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+        </a-entity>
+
+        <a-entity id="set 5" position="-15.5 -0.33 0">
+            <!--    Table and table setting    -->
+            <a-entity position="0 1 0">
+                <a-cylinder height="0.1" radius="4.5" position="0 0 0" src="#pic">
+                    <!--      Milo      -->
+                    <a-cylinder radius="0.3" height="0.8" src="#milo" texture="lines" position="0 0.5 0">
+                        <a-cylinder position="0 0.41 0" radius="0.3" src="metal.jpg" height="0.03" open-ended="t" side="double">
+                            <a-circle position="0 0 0" radius="0.3" src="#top" rotation="-90 0 0"></a-circle>
+                        </a-cylinder>
+                        <a-cylinder position="0 -0.41 0" radius="0.3" src="metal.jpg" height="0.03" open-ended="t" side="double">
+                        </a-cylinder>
+                    </a-cylinder>
+
+                    <!--   cups   -->
+                    <!--      ideal cup              -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="-1.5 0.2 0" open-ended="t" side="double" src="images/ideal2.jpg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+
+                    <!--        Dark cup            -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="1.5 0.2 0" open-ended="t" side="double" src="images/dark.jpeg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+                    <!--         Ice cup           -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="0 0.2 -1.5" open-ended="t" side="double" src="images/ice.jpg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+                    <!--      Image cup           -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="0 0.2 1.5" open-ended="t" side="double" src="images/me.jpg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+
+
+                    <!--      Milk       -->
+                    <a-cylinder radius="0.15" height="0.3" position="0 0.22 0.5" src="#milk">
+                        <a-cylinder position="0 0.159 0" radius="0.15" height="0.03" src="metal.jpg" open-ended="t" side="double">
+                            <a-circle position="0 0 0" radius="0.15" src="#top" rotation="-90 0 0"></a-circle>
+                        </a-cylinder>
+                        <a-cylinder position="0 -0.159 0" radius="0.15" height="0.03" src="metal.jpg" open-ended="t" side="double">
+                        </a-cylinder>
+                    </a-cylinder>
+                </a-cylinder>
+            </a-entity>
+            <a-box height="5" width="0.2" depth="0.2" position="2 -1.5 0.5" src=metal.jpg>
+            </a-box>
+            <a-box height="5" width="0.2" depth="0.2" position="-1 -1.5 2.5" src=metal.jpg>
+            </a-box>
+            <a-box height="5" width="0.2" position="-1 -1.5 -2.5" s depth="0.2" src=metal.jpg>
+            </a-box>
+
+            <!--    Chairs    -->
+            <a-entity position="0 0 4.5">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 -0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+
+            <a-entity position="0 0 -4.5" rotation="0 180 0">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 -0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+
+            <a-entity position="4.5 0 0" rotation="0 90 0">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+
+            <a-entity position="-4.5 0 0" rotation="0 -90 0">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 -0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+        </a-entity>
+
+        <a-entity id="set 6" position="12 -0.33 13">
+            <!--    Table and table setting    -->
+            <a-entity position="0 1 0">
+                <a-cylinder height="0.1" radius="4.5" position="0 0 0" src="#pic">
+                    <!--      Milo      -->
+                    <a-cylinder radius="0.3" height="0.8" src="#milo" texture="lines" position="0 0.5 0">
+                        <a-cylinder position="0 0.41 0" radius="0.3" src="metal.jpg" height="0.03" open-ended="t" side="double">
+                            <a-circle position="0 0 0" radius="0.3" src="#top" rotation="-90 0 0"></a-circle>
+                        </a-cylinder>
+                        <a-cylinder position="0 -0.41 0" radius="0.3" src="metal.jpg" height="0.03" open-ended="t" side="double">
+                        </a-cylinder>
+                    </a-cylinder>
+
+                    <!--   cups   -->
+                    <!--      ideal cup              -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="-1.5 0.2 0" open-ended="t" side="double" src="images/ideal2.jpg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+
+                    <!--        Dark cup            -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="1.5 0.2 0" open-ended="t" side="double" src="images/dark.jpeg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+                    <!--         Ice cup           -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="0 0.2 -1.5" open-ended="t" side="double" src="images/ice.jpg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+                    <!--      Image cup           -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="0 0.2 1.5" open-ended="t" side="double" src="images/me.jpg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+
+
+                    <!--      Milk       -->
+                    <a-cylinder radius="0.15" height="0.3" position="0 0.22 0.5" src="#milk">
+                        <a-cylinder position="0 0.159 0" radius="0.15" height="0.03" src="metal.jpg" open-ended="t" side="double">
+                            <a-circle position="0 0 0" radius="0.15" src="#top" rotation="-90 0 0"></a-circle>
+                        </a-cylinder>
+                        <a-cylinder position="0 -0.159 0" radius="0.15" height="0.03" src="metal.jpg" open-ended="t" side="double">
+                        </a-cylinder>
+                    </a-cylinder>
+                </a-cylinder>
+            </a-entity>
+            <a-box height="5" width="0.2" depth="0.2" position="2 -1.5 0.5" src=metal.jpg>
+            </a-box>
+            <a-box height="5" width="0.2" depth="0.2" position="-1 -1.5 2.5" src=metal.jpg>
+            </a-box>
+            <a-box height="5" width="0.2" position="-1 -1.5 -2.5" s depth="0.2" src=metal.jpg>
+            </a-box>
+
+            <!--    Chairs    -->
+            <a-entity position="0 0 4.5">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 -0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+
+            <a-entity position="0 0 -4.5" rotation="0 180 0">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 -0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+
+            <a-entity position="4.5 0 0" rotation="0 90 0">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+
+            <a-entity position="-4.5 0 0" rotation="0 -90 0">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 -0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+        </a-entity>
+
+        <a-entity id="set 7" position="12 -0.33 -13">
+            <!--    Table and table setting    -->
+            <a-entity position="0 1 0">
+                <a-cylinder height="0.1" radius="4.5" position="0 0 0" src="#pic">
+                    <!--      Milo      -->
+                    <a-cylinder radius="0.3" height="0.8" src="#milo" texture="lines" position="0 0.5 0">
+                        <a-cylinder position="0 0.41 0" radius="0.3" src="metal.jpg" height="0.03" open-ended="t" side="double">
+                            <a-circle position="0 0 0" radius="0.3" src="#top" rotation="-90 0 0"></a-circle>
+                        </a-cylinder>
+                        <a-cylinder position="0 -0.41 0" radius="0.3" src="metal.jpg" height="0.03" open-ended="t" side="double">
+                        </a-cylinder>
+                    </a-cylinder>
+
+                    <!--   cups   -->
+                    <!--      ideal cup              -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="-1.5 0.2 0" open-ended="t" side="double" src="images/ideal2.jpg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+
+                    <!--        Dark cup            -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="1.5 0.2 0" open-ended="t" side="double" src="images/dark.jpeg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+                    <!--         Ice cup           -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="0 0.2 -1.5" open-ended="t" side="double" src="images/ice.jpg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+                    <!--      Image cup           -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="0 0.2 1.5" open-ended="t" side="double" src="images/me.jpg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+
+
+                    <!--      Milk       -->
+                    <a-cylinder radius="0.15" height="0.3" position="0 0.22 0.5" src="#milk">
+                        <a-cylinder position="0 0.159 0" radius="0.15" height="0.03" src="metal.jpg" open-ended="t" side="double">
+                            <a-circle position="0 0 0" radius="0.15" src="#top" rotation="-90 0 0"></a-circle>
+                        </a-cylinder>
+                        <a-cylinder position="0 -0.159 0" radius="0.15" height="0.03" src="metal.jpg" open-ended="t" side="double">
+                        </a-cylinder>
+                    </a-cylinder>
+                </a-cylinder>
+            </a-entity>
+            <a-box height="5" width="0.2" depth="0.2" position="2 -1.5 0.5" src=metal.jpg>
+            </a-box>
+            <a-box height="5" width="0.2" depth="0.2" position="-1 -1.5 2.5" src=metal.jpg>
+            </a-box>
+            <a-box height="5" width="0.2" position="-1 -1.5 -2.5" s depth="0.2" src=metal.jpg>
+            </a-box>
+
+            <!--    Chairs    -->
+            <a-entity position="0 0 4.5">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 -0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+
+            <a-entity position="0 0 -4.5" rotation="0 180 0">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 -0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+
+            <a-entity position="4.5 0 0" rotation="0 90 0">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+
+            <a-entity position="-4.5 0 0" rotation="0 -90 0">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 -0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+        </a-entity>
+
+        <a-entity id="set 8" position="-12 -0.33 13">
+            <!--    Table and table setting    -->
+            <a-entity position="0 1 0">
+                <a-cylinder height="0.1" radius="4.5" position="0 0 0" src="#pic">
+                    <!--      Milo      -->
+                    <a-cylinder radius="0.3" height="0.8" src="#milo" texture="lines" position="0 0.5 0">
+                        <a-cylinder position="0 0.41 0" radius="0.3" src="metal.jpg" height="0.03" open-ended="t" side="double">
+                            <a-circle position="0 0 0" radius="0.3" src="#top" rotation="-90 0 0"></a-circle>
+                        </a-cylinder>
+                        <a-cylinder position="0 -0.41 0" radius="0.3" src="metal.jpg" height="0.03" open-ended="t" side="double">
+                        </a-cylinder>
+                    </a-cylinder>
+
+                    <!--   cups   -->
+                    <!--      ideal cup              -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="-1.5 0.2 0" open-ended="t" side="double" src="images/ideal2.jpg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+
+                    <!--        Dark cup            -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="1.5 0.2 0" open-ended="t" side="double" src="images/dark.jpeg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+                    <!--         Ice cup           -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="0 0.2 -1.5" open-ended="t" side="double" src="images/ice.jpg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+                    <!--      Image cup           -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="0 0.2 1.5" open-ended="t" side="double" src="images/me.jpg">
+                        <a-circle position="0 -0.1 0" radius="0.13" src="#top" rotation="-90 0 0"></a-circle>
+                    </a-cone>
+
+
+                    <!--      Milk       -->
+                    <a-cylinder radius="0.15" height="0.3" position="0 0.22 0.5" src="#milk">
+                        <a-cylinder position="0 0.159 0" radius="0.15" height="0.03" src="metal.jpg" open-ended="t" side="double">
+                            <a-circle position="0 0 0" radius="0.15" src="#top" rotation="-90 0 0"></a-circle>
+                        </a-cylinder>
+                        <a-cylinder position="0 -0.159 0" radius="0.15" height="0.03" src="metal.jpg" open-ended="t" side="double">
+                        </a-cylinder>
+                    </a-cylinder>
+                </a-cylinder>
+            </a-entity>
+            <a-box height="5" width="0.2" depth="0.2" position="2 -1.5 0.5" src=metal.jpg>
+            </a-box>
+            <a-box height="5" width="0.2" depth="0.2" position="-1 -1.5 2.5" src=metal.jpg>
+            </a-box>
+            <a-box height="5" width="0.2" position="-1 -1.5 -2.5" s depth="0.2" src=metal.jpg>
+            </a-box>
+
+            <!--    Chairs    -->
+            <a-entity position="0 0 4.5">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 -0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+
+            <a-entity position="0 0 -4.5" rotation="0 180 0">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 -0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+
+            <a-entity position="4.5 0 0" rotation="0 90 0">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+
+            <a-entity position="-4.5 0 0" rotation="0 -90 0">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 -0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+        </a-entity>
+
+        <a-entity id="set 9" position="-12 -0.33 -13">
+            <!--    Table and table setting    -->
+            <a-entity position="0 1 0">
+                <a-cylinder height="0.1" radius="4.5" position="0 0 0" src="#pic">
+                    <!--      Milo      -->
+                    <a-cylinder radius="0.3" height="0.8" src="#milo" texture="lines" position="0 0.5 0">
+                        <a-cylinder position="0 0.41 0" radius="0.3" src="metal.jpg" height="0.03" open-ended="t" side="double">
+                            <a-circle position="0 0 0" radius="0.3" src="#top" rotation="-90 0 0"></a-circle>
+                        </a-cylinder>
+                        <a-cylinder position="0 -0.41 0" radius="0.3" src="metal.jpg" height="0.03" open-ended="t" side="double">
+                        </a-cylinder>
+                    </a-cylinder>
+
+                    <!--   cups   -->
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="-1.5 0.2 0" open-ended="t" side="double" src="images/ideal2.jpg">
+                    </a-cone>
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="1.5 0.2 0" open-ended="t" side="double" src="images/dark.jpeg">
+                    </a-cone>
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="0 0.2 -1.5" open-ended="t" side="double" src="images/ice.jpg">
+                    </a-cone>
+                    <a-cone radius-top="0.2" radius-bottom="0.1" height="0.5" position="0 0.2 1.5" open-ended="t" side="double" src="images/me.jpg">
+                    </a-cone>
+
+                    <!--      Milk       -->
+                    <a-cylinder radius="0.15" height="0.3" position="0 0.22 0.5" src="#milk">
+                        <a-cylinder position="0 0.159 0" radius="0.15" height="0.03" src="metal.jpg" open-ended="t" side="double">
+                            <a-circle position="0 0 0" radius="0.15" src="#top" rotation="-90 0 0"></a-circle>
+                        </a-cylinder>
+                        <a-cylinder position="0 -0.159 0" radius="0.15" height="0.03" src="metal.jpg" open-ended="t" side="double">
+                        </a-cylinder>
+                    </a-cylinder>
+                </a-cylinder>
+            </a-entity>
+            <a-box height="5" width="0.2" depth="0.2" position="2 -1.5 0.5" src=metal.jpg>
+            </a-box>
+            <a-box height="5" width="0.2" depth="0.2" position="-1 -1.5 2.5" src=metal.jpg>
+            </a-box>
+            <a-box height="5" width="0.2" position="-1 -1.5 -2.5" s depth="0.2" src=metal.jpg>
+            </a-box>
+
+            <!--    Chairs    -->
+            <a-entity position="0 0 4.5">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 -0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+
+            <a-entity position="0 0 -4.5" rotation="0 180 0">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 -0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+
+            <a-entity position="4.5 0 0" rotation="0 90 0">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+
+            <a-entity position="-4.5 0 0" rotation="0 -90 0">
+                <a-entity position="0 0 0">
+                    <a-cylinder height="3.5" radius="0.1" position="0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="3.5" radius="0.1" position="-0.5 0 0.5" src=metal.jpg></a-cylinder>
+                    <a-cylinder height="1.65" radius="0.1" position="-0.5 -0.8 -0.5" src=metal.jpg></a-cylinder>
+                </a-entity>
+                <a-cylinder height="0.1" radius="1" position="0 0 -0.1" src=wood.jpg></a-cylinder>
+                <a-box height="0.1" width="2" position="0 1.7 0.4" rotation="-90 0 0" src=wood.jpg></a-box>
+            </a-entity>
+        </a-entity>
+        <!--   Platform     -->
+        <a-cylinder height="0.5" position="0 -2.79 0" radius="30" src="#ground">
+            <a-cylinder height="0.4" position="0 0.4 0" radius="23.5" src="#ground">
+                <a-cylinder height="0.4" position="0 0.5 0" radius="8" src="#ground">
+                </a-cylinder>
+            </a-cylinder>
+        </a-cylinder>
+
+        <!--    Floor    -->
+
+        <!-- ice plane-->
+        <!--
+        <a-plane src="images/ice.jpg" repeat="70 70" height="700" width="700" rotation="-90 0 0" position="0 -3.1 200">
+        </a-plane>
+-->
+        <a-plane src="images/w.jpg" height="700" width="700" rotation="-90 0 0" position="0 -3.2 -200">
+        </a-plane>
+
+        <!--    sand    -->
+        <a-plane src="images/sand.jpeg" height="700" width="700" rotation="-90 0 0" position="0 -3.1 200" repeat="50 50">
+        </a-plane>
+
+        <!--    Sky    -->
+        <a-sky src="#sky" rotation="0 20 0"></a-sky>
+
+        <a-camera position="10 3 100"></a-camera>
+    </a-scene>
+</body>
+
+</html>
